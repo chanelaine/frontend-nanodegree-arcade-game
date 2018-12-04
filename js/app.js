@@ -25,6 +25,13 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
+class Hero {
+  contructor () {
+    this.x = 0;
+    this.y = 0;
+    this.sprite = 'images/char-boy.png';
+  }
+}
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
