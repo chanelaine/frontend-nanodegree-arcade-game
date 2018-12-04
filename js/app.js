@@ -31,6 +31,12 @@ class Hero {
     this.y = 0;
     this.sprite = 'images/char-boy.png';
   }
+
+  // draw sprite at the x and y coordinate position. code copied from enemy class code.
+  render() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  }
+
 }
 
 // Now instantiate your objects.
