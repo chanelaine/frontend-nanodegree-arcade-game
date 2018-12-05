@@ -7,9 +7,10 @@ var Enemy = function() {
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
     this.x = 0;
-    this.y = 0;
+    this.y = 55;
     this.step = 101;
     this.boundary = this.step * 5;
+    this.resetPos = -this.step;
 };
 
 // Update the enemy's position, required method for game
@@ -23,6 +24,9 @@ Enemy.prototype.update = function(dt) {
     // moves bug forward by speed * dt
     if (this.x < this.boundary) {
       this.x += 200 * dt;
+    }
+    else {
+      this.x = this.resetPos;
     }
 };
 
