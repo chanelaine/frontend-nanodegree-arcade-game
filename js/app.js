@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function(x,y) {
+var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -8,6 +8,7 @@ var Enemy = function(x,y) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y + 55;
+    this.speed = speed;
     this.step = 101;
     this.boundary = this.step * 5;
     this.resetPos = -this.step;
@@ -23,7 +24,7 @@ Enemy.prototype.update = function(dt) {
     // checks if bug is within boandary
     // moves bug forward by speed * dt
     if (this.x < this.boundary) {
-      this.x += 200 * dt;
+      this.x += this.speed * dt;
     }
     else {
       this.x = this.resetPos;
@@ -86,9 +87,9 @@ class Hero {
 // Place the player object in a variable called player
 
 const player = new Hero();
-const bug1 = new Enemy(-101, 0);
-const bug2 = new Enemy(-101, 83);
-const bug3 = new Enemy((-101 *2.5), 83);
+const bug1 = new Enemy(-101, 0, 200);
+const bug2 = new Enemy(-101, 83, 300);
+const bug3 = new Enemy((-101 *2.5), 83, 300);
 const allEnemies = [];
 allEnemies.push(bug1, bug2, bug3);
 
