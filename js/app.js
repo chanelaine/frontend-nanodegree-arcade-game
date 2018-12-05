@@ -49,6 +49,7 @@ class Hero {
     this.x = this.startX;
     this.y = this.startY;
     this.sprite = 'images/char-boy.png';
+    this.victory = false;
   }
 
   // draw sprite at the x and y coordinate position. code copied from enemy class code.
@@ -86,6 +87,9 @@ class Hero {
     for(let enemy of allEnemies) {
       if (this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x + this.step/2)) {
         this.reset();
+      }
+      if(this.y === 55) {
+        this.victory = true;
       }
     }
   }
